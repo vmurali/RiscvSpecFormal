@@ -1,15 +1,15 @@
 [submodule "Kami"]
 	path = Kami
-	url = https://github.com/sifive/Kami
+	url = git@github.com:vmurali/Kami.git
 [submodule "ProcKami"]
 	path = ProcKami
-	url = https://github.com/sifive/ProcKami
+	url = git@github.com:vmurali/ProcKami.git
 [submodule "FpuKami"]
 	path = FpuKami
-	url = https://github.com/sifive/FpuKami
+	url = git@github.com:vmurali/FpuKami.git
 [submodule "coq-record-update"]
 	path = coq-record-update
 	url = https://github.com/tchajed/coq-record-update
 [submodule "StdLibKami"]
 	path = StdLibKami
-	url = https://github.com/sifive/StdLibKami.git
+	url = git@github.com:vmurali/StdLibKami.git
