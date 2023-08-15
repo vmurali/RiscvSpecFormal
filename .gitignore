@@ -37,3 +37,4 @@ Main.prof
 .*.swp
 simpleTestsResult
 runTestsUsingSlurmResults
+dist-newstyle
