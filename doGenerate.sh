@@ -220,6 +220,8 @@ shift $((OPTIND - 1))
 
 execute "time make $rebuild $parallel"
 
+GHCFLAGS=-XNoPolyKinds
+
 cd Kami && ./fixHaskell.sh ../HaskellGen .. && cd ..
 cp Haskell/*.hs HaskellGen
 function buildSim {
