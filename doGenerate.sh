@@ -5,6 +5,8 @@
 
 source common.sh
 
+GHCFLAGS=-XNoPolyKinds
+
 verbose=0
 rebuild=""
 xlen=64
@@ -219,8 +221,6 @@ done
 shift $((OPTIND - 1))
 
 execute "time make $rebuild $parallel"
-
-GHCFLAGS=-XNoPolyKinds
 
 cd Kami && ./fixHaskell.sh ../HaskellGen .. && cd ..
 cp Haskell/*.hs HaskellGen
