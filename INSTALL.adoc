@@ -5,15 +5,15 @@
 
 == Dependencies
 === Dependencies for building the model
-. Coq 8.11.0
-. GHC 8.6.5 or newer and Cabal
+. Coq 8.11.0 (works with 8.17.1 now)
+. GHC 8.6.5 or newer and Cabal (works with 9.4.4 now)
 
 === Dependencies for compiling the tests
-. RISCV GCC 8.2.0-2019.02.0
+. RISCV GCC 8.2.0-2019.02.0 (kinds of works with any riscv cross compiler; gcc 12.2.0)
 
 === Dependencies for running the Kami-generated Verilog model on riscv-tests
-. Clang 3.8.0 or newer
-. Verilator master branch (4.015 devel rev UNKNOWN_REV)
+. Clang 3.8.0 or newer (works with 14.0.3)
+. Verilator master branch (4.015 devel rev UNKNOWN_REV) (works with 5.014 2023-08-06 rev UNKNOWN.REV)
 
 Note that the versions mentioned above are known to work. Try other versions at your own peril. In particular, GHC 8.2.2 or newer works; Clang 10.0.0 or newer works *but Clang 8.0.0 does not work*; Verilator 4.013 devel rev UNKNOWN_REV or newer works.
 
