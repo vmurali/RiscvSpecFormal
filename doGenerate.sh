@@ -5,6 +5,8 @@
 
 source common.sh
 
+GHCFLAGS=-XNoPolyKinds
+
 verbose=0
 rebuild=""
 xlen=64
@@ -239,9 +241,13 @@ fi
 
 if [[ $verilogSim == 1 || $verilogCore == 1 || $noSimSelected == 1 ]]
 then
-  if [[ $testcase != ""   ]]; then model=test$testcase; fi
-  if [[ $verilogSim == 1  ]]; then model=model$xlen; fi
-  if [[ $verilogCore == 1 ]]; then model=core$xlen; fi
+  if [[ $testcase == "" ]]; then
+    model=model$xlen
+  elif [[ $verilogCore == 1 ]]; then
+    model=core$xlen
+  else
+   model=model$xlen
+  fi
   
   echo "rtlMod = separateModRemove $model" >> HaskellGen/Target.hs
 
@@ -267,6 +273,6 @@ then
   fi
 
   notice "Compiling the simulation program."
-  execute "cd models/$model; time make $parallel -C obj_dir -f Vsystem.mk Vsystem CXX=$compiler LINK=$compiler; cd ../.."
+  execute "cd models/$model; time make $parallel -C obj_dir -f Vsystem.mk Vsystem CXX=$compiler LINK=$compiler LDFLAGS='-undefined dynamic_lookup'; cd ../.."
 fi
 notice "Done."
