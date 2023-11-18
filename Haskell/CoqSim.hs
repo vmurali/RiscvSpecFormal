@@ -19,7 +19,7 @@ import Control.Exception
 import Data.IORef
 import UartDev
 import SimLib
-import Syntax (separateModRemove, getRules, getAllRegisters, Kind(..), Signature)
+import Syntax (separateModRemove, getRules, getAllRegisters, Kind(..), Signature, Any)
 
 hex_to_integer :: T.Text -> Integer
 hex_to_integer txt = case hexadecimal txt of
@@ -93,10 +93,10 @@ proc_core_writeUART (addr, (val, (size, _))) _ _ simEnv = do
     return (simEnv, BV.nil)
 -}
 
-externalInterruptMethod :: R.Any -> S.KamiState -> IO R.Any
+externalInterruptMethod :: Any -> S.KamiState -> IO Any
 externalInterruptMethod _ _ = return $ unsafeCoerce False
 
-debugInterruptMethod :: R.Any -> S.KamiState -> IO R.Any
+debugInterruptMethod :: Any -> S.KamiState -> IO Any
 debugInterruptMethod _ _ = return $ unsafeCoerce False
 
 methods :: M.Map String (Syntax.Signature,S.Coq_meth_sig)
