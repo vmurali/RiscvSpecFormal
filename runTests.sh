@@ -100,6 +100,8 @@ fi
 notice "Running tests in $path."
 
 files=$(./blackList.sh $path $xlen)
+#set -- $files
+#files=$1
 
 if [[ $parallel == 0 ]]
 then
