@@ -2,7 +2,7 @@ module Target (module Syntax, module Rtl, module Word, module Fin, module Eclect
 import CompilerSimple hiding (unsafeCoerce, __)
 import EclecticLib hiding (__)
 import PeanoNat
-import Fin
+import Fin hiding (unsafeCoerce)
 import Instance hiding (unsafeCoerce, __)
 import ExtractEx hiding (unsafeCoerce, __)
 import Rtl
