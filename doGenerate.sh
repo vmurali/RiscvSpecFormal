@@ -267,7 +267,7 @@ then
   execute "cd models/$model; time verilator --top-module system -Wno-CMPCONST -O0 -Wno-WIDTH --cc System.sv --trace --trace-underscore -Wno-fatal --exe System.cpp; cd ../.."
     
   if [ -x "$(command -v clang)" ]; then
-    compiler=clang
+    compiler=clang++
   else
     compiler=g++
   fi
